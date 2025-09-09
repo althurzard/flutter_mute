@@ -1,10 +1,6 @@
 import Flutter
 import UIKit
 
-#if canImport(TargetConditionals)
-import TargetConditionals
-#endif
-
 public class SwiftFlutterMutePlugin: NSObject, FlutterPlugin {
     
     enum RingerMode: Int {
@@ -14,11 +10,7 @@ public class SwiftFlutterMutePlugin: NSObject, FlutterPlugin {
     }
     
     var isSimulator: Bool {
-        #if targetEnvironment(simulator)
-        return true
-        #else
         return false
-        #endif
     }
     
   public static func register(with registrar: FlutterPluginRegistrar) {
